@@ -19,3 +19,10 @@ function simpletheme_theme_setup() {
 }
 // executes simpletheme_theme_setup function
 add_action('init', 'simpletheme_theme_setup');
+
+// gives users an option to add custom background image
+add_theme_support('custom-background');
+// gives users an option to add custom header image
+add_theme_support('custom-header');
+// gives users an option to add featured images in posts
+add_theme_support('post-thumbnails');

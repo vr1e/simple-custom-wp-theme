@@ -19,3 +19,5 @@
     <body <?php body_class( $simpletheme_classes ); ?>>
 <!-- adds primary menu to header content -->
         <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
+        <!-- adds custom header included in functions at this position -->
+        <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
