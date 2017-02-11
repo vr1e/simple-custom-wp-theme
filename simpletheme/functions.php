@@ -26,3 +26,5 @@ add_theme_support('custom-background');
 add_theme_support('custom-header');
 // gives users an option to add featured images in posts
 add_theme_support('post-thumbnails');
+// adds support for different post formats (in this case aside, image and video)
+add_theme_support('post-formats', array('aside', 'image', 'video'));
