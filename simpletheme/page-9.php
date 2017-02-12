@@ -1,23 +1,31 @@
 <!-- adds header -->
 <?php get_header(); ?>
+<div class="row">
+    <div class="col-xs-12 col-sm-8">
+        <!-- adds post loop -->
+        <?php
+        if( have_posts() ):
 
-<!-- adds post loop -->
-    <?php
-    if( have_posts() ):
+            while( have_posts() ): the_post(); ?>
 
-        while( have_posts() ): the_post(); ?>
+                <!-- adds post content -->
+                <p><?php the_content(); ?></p>
+                <!-- adds post title -->
+                <h3><?php the_title(); ?></h3>
 
-<!-- adds post content -->
-            <p><?php the_content(); ?>dasdasd</p>
-<!-- adds post title -->
-            <h3><?php the_title(); ?></h3>
+                <hr>
 
-            <hr>
+            <?php endwhile;
 
-        <?php endwhile;
-
-    endif;
+        endif;
 
     ?>
+
+    </div>
+    <div class="col-xs-12 col-sm-4">
+        <!-- adds a sidebar -->
+        <?php get_sidebar(); ?>
+    </div>
+</div>
 <!-- adds footer -->
 <?php get_footer(); ?>
