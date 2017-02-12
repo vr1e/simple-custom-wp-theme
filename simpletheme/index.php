@@ -1,5 +1,6 @@
 <!-- adds header -->
 <?php get_header(); ?>
+
 <!-- splits content into columns 3/4 for the post loop, 1/4 for the sidebar -->
 <div class="row">
     <div class="col-xs-12 col-sm-8">
