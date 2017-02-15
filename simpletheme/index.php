@@ -6,8 +6,13 @@
     <div class="col-xs-12 col-sm-8">
         <div class="row text-center no-margin">
 
-            <!-- adds post loop -->
             <?php
+            // define how many posts per page you want to display
+            $currentPage = (get_query_var('paged')) ? get_query_var('paged') : 1;
+            $args = array('posts_per_page' => 3, 'paged' => $currentPage);
+            query_posts($args);
+
+            // adds post loop
             if( have_posts() ): $i = 0;
                 while( have_posts() ): the_post(); ?>
                 <!-- sets counters i that counts how many posts there is and column that sets apropriate bootstrap columns -->
@@ -34,9 +39,19 @@
                         </div>
                     </div>
 
-                <?php $i++; endwhile;
-            endif;
+                <?php $i++; endwhile; ?>
+                <!-- add pagination for the blog posts -->
+                <div class="col-xs-6 text-left">
+                    <?php next_posts_link('« Older Posts'); ?>
+                </div>
+                <div class="col-xs-6 text-right">
+                    <?php previous_posts_link('Newer Posts »'); ?>
+                </div>
+
+            <?php endif;
+                wp_reset_query(); // resets posts per page query
             ?>
+
         </div>
     </div>
     <div class="col-xs-12 col-sm-4">

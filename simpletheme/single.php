@@ -23,6 +23,11 @@
                     <?php the_content(); ?>
 
                     <hr>
+                    <!-- add option to go to previous or next post -->
+                        <div class="row">
+                            <div class="col-xs-6 text-left"><?php previous_post_link(); ?></div>
+                            <div class="col-xs-6 text-right"><?php next_post_link(); ?></div>
+                        </div>
 
                     <?php
                     // add comments to the post
