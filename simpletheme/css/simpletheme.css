@@ -1,3 +1,11 @@
+.no-margin {
+    margin: 0;
+}
+
+.blog-item {
+    padding: 0;
+}
+
 .carousel {
     background: #000;
 }

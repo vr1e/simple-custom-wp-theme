@@ -53,6 +53,9 @@
 
                 </div>
 
+                <div class="search-form-container">
+                    <?php get_search_form(); ?>
+                </div>
             </div>
 
         <!-- adds custom header included in functions at this position -->

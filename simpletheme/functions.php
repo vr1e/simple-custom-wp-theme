@@ -36,6 +36,8 @@ add_theme_support('custom-header');
 add_theme_support('post-thumbnails');
 // adds support for different post formats (in this case aside, image and video)
 add_theme_support('post-formats', array('aside', 'image', 'video'));
+// adds support for the html5 search form
+add_theme_support('html5',array('search-form'));
 
 /* SIDEBAR FUNCTIONS */
 // adds a sidebar function
