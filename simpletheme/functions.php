@@ -75,3 +75,10 @@ add_action('widgets_init','simple_widget_setup');
 /* INCLUDE WALKER FILE */
 
 require get_template_directory() . '/inc/walker.php';
+
+/* HEAD FUNCTION */
+
+function awesome_remove_version() {
+    return '';
+}
+add_filter('the_generator', 'awesome_remove_version');

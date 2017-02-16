@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html>
+<!-- sets language based on wordpress installation -->
+<html <?php language_attributes(); ?>>
     <head>
-        <meta charset="utf-8">
-        <title>Simple Theme</title>
+        <meta charset="<?php bloginfo('charset'); ?>">
+        <title><?php bloginfo('name'); ?><?php wp_title('|'); ?></title>
+        <meta name="description" content="<?php bloginfo('description'); ?>">
 <!-- header hook to add elements to <head> - styles, scripts and meta tags -->
         <?php wp_head(); ?>
     </head>
