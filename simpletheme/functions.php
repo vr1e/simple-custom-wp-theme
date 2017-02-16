@@ -71,3 +71,7 @@ function simple_widget_setup() {
 }
 
 add_action('widgets_init','simple_widget_setup');
+
+/* INCLUDE WALKER FILE */
+
+require get_template_directory() . '/inc/walker.php';
