@@ -19,33 +19,19 @@
                     <?php endif; ?>
 
                     <small>
-                        <?php
+                        <?php echo
                         // loop through custom taxonomies and echo each one
-                            $terms_list = wp_get_post_terms($post -> ID, 'field');
-
-                            $i = 0;
-                            foreach($terms_list as $term) {
-                                $i++;
-                                if($i > 1) {
-                                    echo ', ';
-                                }
-                                echo $term -> name;
-                            }
+                            simple_get_terms($post -> ID, 'field');
                         ?> ||
-                        <?php
+                        <?php echo
                         // loop through custom taxonomies and echo each one
-                            $terms_list = wp_get_post_terms($post -> ID, 'software');
-
-                            $i = 0;
-                            foreach($terms_list as $term) {
-                                $i++;
-                                if($i > 1) {
-                                    echo ', ';
-                                }
-                                echo $term -> name;
-                            }
-                        ?> || <?php edit_post_link(); ?>
-
+                            simple_get_terms($post -> ID, 'software');
+                        ?>
+                        <?php
+                        if(current_user_can('manage_options')) {
+                            echo '|| ';  edit_post_link(); 
+                        }
+                        ?>
                     </small>
 
                     <?php the_content(); ?>

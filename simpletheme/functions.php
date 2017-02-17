@@ -172,3 +172,19 @@ function simple_custom_taxonomies() {
 }
 
 add_action( 'init', 'simple_custom_taxonomies' );
+
+/* CUSTOM TERM FUNCTION */
+
+function simple_get_terms($postID, $term) {
+    $terms_list = wp_get_post_terms($postID, $term);
+    $output = '';
+    $i = 0;
+    foreach($terms_list as $term) {
+        $i++;
+        if($i > 1) {
+            $output .= ', ';
+        }
+        $output .= '<a href="' . get_term_link($term) . '">' . $term -> name . '</a>';
+    }
+    return $output;
+}
