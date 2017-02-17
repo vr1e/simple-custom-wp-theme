@@ -26,7 +26,7 @@
 
                 <div class="col-xs-12">
 
-                    <nav class="navbar navbar-default navbar-fixed-top">
+                    <nav class="navbar navbar-default navbar-fixed-top"<?php echo (is_admin_bar_showing()) ? ' style="top: 32px;"' : ''; ?>>
                       <div class="container-fluid">
                         <!-- Brand and toggle get grouped for better mobile display -->
                         <div class="navbar-header">
